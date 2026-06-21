@@ -1,0 +1,1 @@
+{"uuid":"6aa2718a-5b2b-49ba-b937-aa7f6a3553ab","name":"app.ECommarce.setup","children":["8257b710-e75f-41ce-9afe-60f47a869399"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1781732663960,"stop":1781732664406}],"afters":[],"start":1781732663960,"stop":1781732664406}

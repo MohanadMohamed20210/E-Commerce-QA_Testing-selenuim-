@@ -1,0 +1,625 @@
+{
+  "info": {
+    "_postman_id": "fd104fa6-4063-483b-ad8e-804fdae77e34",
+    "name": "Main User Flow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31947649"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(201);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"Created\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check the response body\", function () {\r",
+              "    pm.expect(body.message).to.include(\"Registration successful\");\r",
+              "    pm.expect(body.user.id).to.exist;\r",
+              "    pm.expect(body.user.name).to.include(pm.environment.get(\"Name\"));\r",
+              "    pm.expect(body.user.role).to.include(\"customer\");\r",
+              "    pm.expect(body.user.status).to.include(\"active\");\r",
+              "});\r",
+              "\r",
+              "pm.environment.set(\"Email\", body.user.email);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "let body = JSON.parse(pm.request.body.raw);\r",
+              "\r",
+              "pm.environment.set(\"Counter\", Number(pm.environment.get(\"Counter\") + 1));\r",
+              "\r",
+              "let newEmail = \"base\" + pm.environment.get(\"Counter\") + \"@gmail.com\";\r",
+              "\r",
+              "body[\"email\"] = newEmail;\r",
+              "\r",
+              "pm.request.body.update(JSON.stringify(body));\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":     \"{{Name}}\",\r\n    \"password\": \"{{Pass}}\",\r\n    \"phone\":    \"{{Phone}}\",\r\n    \"city\":     \"{{city}}\",\r\n    \"address\":  \"{{Addr}}\",\r\n    \"bio\":      \"{{BIO}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}{{RegisterEP}}",
+          "host": [
+            "{{URL}}{{RegisterEP}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"recieved email\", function () {\r",
+              "    pm.expect(body.user.email).to.eql(pm.environment.get(\"Email\"));\r",
+              "});\r",
+              "\r",
+              "pm.environment.set(\"COOKIES\", pm.response.headers.get(\"set-cookie\"));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"{{Email}}\",\r\n    \"password\": \"{{Pass}}\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}{{LoginEP}}",
+          "host": [
+            "{{URL}}{{LoginEP}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add to cart",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"recieved email\", function () {\r",
+              "    pm.expect(body.message).to.eql(\"Item added to cart\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{COOKIES}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"productId\": \"{{ProID}}\",\r\n    \"quantity\": \"{{Qun}}\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}{{AddEP}}",
+          "host": [
+            "{{URL}}{{AddEP}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checkout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "let expectedSchima = {\r",
+              "    message: {\r",
+              "        type: \"string\"\r",
+              "    },\r",
+              "    order: {\r",
+              "        type: \"object\",\r",
+              "        required: [\"orderId\", \"total\"],\r",
+              "        properties: {\r",
+              "            orderId: {\r",
+              "                type: \"number\"\r",
+              "            },\r",
+              "            total: {\r",
+              "                type: \"number\"\r",
+              "            }\r",
+              "        }\r",
+              "    }\r",
+              "}\r",
+              "\r",
+              "//{\"message\":\"Order created\",\"order\":{\"orderId\":1,\"total\":18.75}}\r",
+              "pm.test(\"recieved data\", function () {\r",
+              "    pm.response.to.have.jsonSchema(expectedSchima);\r",
+              "    pm.expect(body.message).to.eql(\"Order created\");\r",
+              "    pm.expect(body.order.orderId).to.be.a(\"number\");\r",
+              "    pm.expect(body.order.total).to.be.a(\"number\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Cookie",
+            "value": "{{COOKIES}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"address\": \"{{Addr}}\",\r\n    \"paymentMethod\": \"cash\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}{{CheckoutEP}}",
+          "host": [
+            "{{URL}}{{CheckoutEP}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "let expectedSchema = {\r",
+              "    message: {\r",
+              "        type: \"string\"\r",
+              "    },\r",
+              "    user: {\r",
+              "        type: \"object\",\r",
+              "        require: [\"id\",\"name\",\"email\",\"role\",\"status\",\"phone\",\"city\",\"address\",\"bio\"],\r",
+              "        properties: {\r",
+              "            id: {type: \"number\"},\r",
+              "            name: {type: \"string\"},\r",
+              "            email: {type: \"string\"},\r",
+              "            role: {type: \"string\"},\r",
+              "            status: {type: \"string\"},\r",
+              "            phone: {type: \"string\"},\r",
+              "            city: {type: \"string\"},\r",
+              "            address: {type: \"string\"},\r",
+              "            bio: {type: \"string\"}\r",
+              "        }\r",
+              "    }\r",
+              "}\r",
+              "\r",
+              "pm.test(\"check user details\", function () {\r",
+              "    pm.response.to.have.jsonSchema(expectedSchema);\r",
+              "})\r",
+              "\r",
+              "pm.test(\"check admin data\", function () {\r",
+              "    pm.expect(body.user.name).to.eql(\"Admin User\");\r",
+              "    pm.expect(body.user.email).to.eql(\"admin@test.com\");\r",
+              "    pm.expect(body.user.role).to.eql(\"admin\");\r",
+              "    pm.expect(body.user.status).to.eql(\"active\");\r",
+              "    pm.expect(body.user.phone).to.eql(\"01000000000\");\r",
+              "    pm.expect(body.user.city).to.eql(\"Alexandria\");\r",
+              "    pm.expect(body.user.address).to.eql(\"Admin office\");\r",
+              "    pm.expect(body.user.bio).to.eql(\"Main system admin account.\");\r",
+              "    pm.expect(body.message).to.eql(\"Login successful\");\r",
+              "})\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}{{LoginEP}}",
+          "host": [
+            "{{URL}}{{LoginEP}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Remove Product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check product removed\", function () {\r",
+              "    pm.expect(body.message).to.be.eql(\"Product removed from shop\");\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"admin123\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}/api/admin/products/{{ProID}}",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "products",
+            "{{ProID}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin restore product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check product removed\", function () {\r",
+              "    pm.expect(body.message).to.be.eql(\"Product restored\");\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"admin123\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}/api/admin/products/{{ProID}}/restore",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "products",
+            "{{ProID}}",
+            "restore"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin get products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(200);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"OK\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"products avaliblity\", function() {\r",
+              "    pm.expect(pm.response.json().products).not.to.be.empty;\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"admin123\"\r\n}"
+        },
+        "url": {
+          "raw": "{{URL}}/api/admin/products",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Create Product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let body = pm.response.json();\r",
+              "\r",
+              "pm.test(\"check status code\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eql(201);\r",
+              "    pm.expect(pm.response.status).to.be.eq(\"Created\")\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check response time\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"check product removed\", function () {\r",
+              "    pm.expect(body.message).to.be.eql(\"Product created\");\r",
+              "    pm.expect(body.id).to.be.exist;\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Mohanad\",\r\n    \"category\": \"Home\",\r\n    \"description\": \"light source\",\r\n    \"price\": 10,\r\n    \"stock\": 10,\r\n    \"rating\": 4,\r\n    \"image\": \"/uploads/product-1781570600157-3381b0f42eb8.png\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/api/admin/products",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

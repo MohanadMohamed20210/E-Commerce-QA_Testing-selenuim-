@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[id = 103
+user_id = 24
+product_id = 20
+quantity = 1
+created_at = 2026-06-18 04:11:05
+updated_at = 2026-06-18 04:11:05
+]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-06-18T04:10:38 EEST" name="MyTest" finished-at="2026-06-18T04:11:05 EEST" duration-ms="27588">
+    <groups>
+    </groups>
+    <test started-at="2026-06-18T04:10:38 EEST" name="E-Commarce" finished-at="2026-06-18T04:11:05 EEST" duration-ms="27588">
+      <class name="app.ECommarce">
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:38 EEST" name="setup" finished-at="2026-06-18T04:10:41 EEST" duration-ms="3225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_1()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:41 EEST" name="testCase_1" finished-at="2026-06-18T04:10:42 EEST" duration-ms="1156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:42 EEST" name="tearDown" finished-at="2026-06-18T04:10:42 EEST" duration-ms="81" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:42 EEST" name="setup" finished-at="2026-06-18T04:10:43 EEST" duration-ms="542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_2()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:43 EEST" name="testCase_2" finished-at="2026-06-18T04:10:44 EEST" duration-ms="1012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:44 EEST" name="tearDown" finished-at="2026-06-18T04:10:44 EEST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:44 EEST" name="setup" finished-at="2026-06-18T04:10:44 EEST" duration-ms="459" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_3()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:44 EEST" name="testCase_3" finished-at="2026-06-18T04:10:45 EEST" duration-ms="1038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_3 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:45 EEST" name="tearDown" finished-at="2026-06-18T04:10:45 EEST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:45 EEST" name="setup" finished-at="2026-06-18T04:10:46 EEST" duration-ms="509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_4()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:46 EEST" name="testCase_4" finished-at="2026-06-18T04:10:46 EEST" duration-ms="487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_4 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:46 EEST" name="tearDown" finished-at="2026-06-18T04:10:47 EEST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:47 EEST" name="setup" finished-at="2026-06-18T04:10:47 EEST" duration-ms="511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_5()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:47 EEST" name="testCase_5" finished-at="2026-06-18T04:10:47 EEST" duration-ms="475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_5 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:47 EEST" name="tearDown" finished-at="2026-06-18T04:10:48 EEST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:48 EEST" name="setup" finished-at="2026-06-18T04:10:48 EEST" duration-ms="504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_6()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:48 EEST" name="testCase_6" finished-at="2026-06-18T04:10:49 EEST" duration-ms="638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_6 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:49 EEST" name="tearDown" finished-at="2026-06-18T04:10:49 EEST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:49 EEST" name="setup" finished-at="2026-06-18T04:10:49 EEST" duration-ms="470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_7()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:49 EEST" name="testCase_7" finished-at="2026-06-18T04:10:51 EEST" duration-ms="1443" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_7 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:51 EEST" name="tearDown" finished-at="2026-06-18T04:10:51 EEST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:51 EEST" name="setup" finished-at="2026-06-18T04:10:51 EEST" duration-ms="467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_8()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:51 EEST" name="testCase_8" finished-at="2026-06-18T04:10:52 EEST" duration-ms="946" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_8 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:52 EEST" name="tearDown" finished-at="2026-06-18T04:10:52 EEST" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:52 EEST" name="setup" finished-at="2026-06-18T04:10:53 EEST" duration-ms="518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_9()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:53 EEST" name="testCase_9" finished-at="2026-06-18T04:10:54 EEST" duration-ms="950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_9 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:54 EEST" name="tearDown" finished-at="2026-06-18T04:10:54 EEST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:54 EEST" name="setup" finished-at="2026-06-18T04:10:54 EEST" duration-ms="489" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_10(java.lang.String)[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:54 EEST" name="testCase_10" data-provider="productsToAdd" finished-at="2026-06-18T04:10:55 EEST" duration-ms="1183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sticky Notes Pack]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_10 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:55 EEST" name="tearDown" finished-at="2026-06-18T04:10:56 EEST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:56 EEST" name="setup" finished-at="2026-06-18T04:10:56 EEST" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_10(java.lang.String)[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:56 EEST" name="testCase_10" data-provider="productsToAdd" finished-at="2026-06-18T04:10:57 EEST" duration-ms="1160" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[USB Hub]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_10 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:57 EEST" name="tearDown" finished-at="2026-06-18T04:10:57 EEST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:57 EEST" name="setup" finished-at="2026-06-18T04:10:58 EEST" duration-ms="458" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_10(java.lang.String)[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:58 EEST" name="testCase_10" data-provider="productsToAdd" finished-at="2026-06-18T04:10:59 EEST" duration-ms="1696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA Notebook]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_10 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:59 EEST" name="tearDown" finished-at="2026-06-18T04:10:59 EEST" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:10:59 EEST" name="setup" finished-at="2026-06-18T04:11:00 EEST" duration-ms="513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_11()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:00 EEST" name="testCase_11" finished-at="2026-06-18T04:11:01 EEST" duration-ms="1339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_11 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:01 EEST" name="tearDown" finished-at="2026-06-18T04:11:01 EEST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:01 EEST" name="setup" finished-at="2026-06-18T04:11:02 EEST" duration-ms="476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_12()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:02 EEST" name="testCase_12" finished-at="2026-06-18T04:11:04 EEST" duration-ms="1994" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase_12 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:04 EEST" name="tearDown" finished-at="2026-06-18T04:11:04 EEST" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:04 EEST" name="setup" finished-at="2026-06-18T04:11:04 EEST" duration-ms="467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testCase_13()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:04 EEST" name="testCase_13" finished-at="2026-06-18T04:11:05 EEST" duration-ms="780" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[id = 103
+user_id = 24
+product_id = 20
+quantity = 1
+created_at = 2026-06-18 04:11:05
+updated_at = 2026-06-18 04:11:05
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testCase_13 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:app.ECommarce@3005db4a]" started-at="2026-06-18T04:11:05 EEST" name="tearDown" finished-at="2026-06-18T04:11:05 EEST" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- app.ECommarce -->
+    </test> <!-- E-Commarce -->
+  </suite> <!-- MyTest -->
+</testng-results>
